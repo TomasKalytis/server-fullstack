@@ -3,6 +3,15 @@ GET http://localhost:3001/
 ### get all users
 GET http://localhost:3001/api/users
 
+### get all towns
+GET http://localhost:3001/api/users/town
+
+### get single user
+GET http://localhost:3001/api/users/1
+
+### delet a user
+DELETE http://localhost:3001/api/users/2
+
 ###
 GET https://jsonplaceholder.typicode.com/users
 
