@@ -20,6 +20,9 @@ let users = [
 app.use(morgan("dev"));
 app.use(cors()); // to fix cors error
 
+// jei norim i request.body gaquti json
+app.use(express.json());
+
 //ROUTES
 
 app.get("/", (req, res) => {
@@ -63,6 +66,17 @@ app.delete("/api/users/:userId", (request, response) => {
   users = users.filter((userObj) => userObj.userId !== userId);
   console.log("users ===", users);
   response.json(users);
+});
+
+app.post("/api/users", (request, response) => {
+  const newUser = {
+    id: Math.random().toString().slice(3),
+    name: request.body.name,
+    town: request.body.town,
+    isDriver: request.body.isDriver,
+  };
+  users.push(newUser);
+  response.sendStatus(201);
 });
 
 app.listen(port, () => {
