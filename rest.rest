@@ -24,3 +24,12 @@ Content-Type: application/json
     "name": "Mike", "town": "Kazkur", "isDriver": false
 
 }
+### Update user
+POST http://localhost:3001/api/users/2
+Content-Type: application/json
+
+{
+
+    "name": "Serbentautas", "town": "Kazkur", "isDriver": true
+
+}
